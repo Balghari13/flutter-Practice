@@ -1,3 +1,4 @@
+import 'package:bmi_pract/PassingDataPrac.dart';
 import 'package:bmi_pract/widget/roundedButton.dart';
 import 'package:flutter/material.dart';
 
@@ -19,8 +20,8 @@ class MyApp extends StatelessWidget {
   }
 }
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
+   HomePage({Key? key}) : super(key: key);
+final nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,10 +41,15 @@ class HomePage extends StatelessWidget {
 
               ),
             ),
+            TextField(
+              controller: nameController,
+            ),
             Container(
               width: 100,
               child: RoundedButton(btnName: 'Sign In', icon: Icon(Icons.unarchive),
                 callback: (){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context)=>PassingDataPrac(nameController.text.toString())));
                   print('clicked');
                 },
                 byColor: Colors.orange,
