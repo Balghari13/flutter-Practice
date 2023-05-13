@@ -1,4 +1,5 @@
 import 'package:bmi_pract/PassingDataPrac.dart';
+import 'package:bmi_pract/RangeSlider.dart';
 import 'package:bmi_pract/widget/roundedButton.dart';
 import 'package:flutter/material.dart';
 
@@ -36,6 +37,9 @@ final nameController = TextEditingController();
               width: 100,
               child: RoundedButton(btnName: 'Log In', icon: Icon(Icons.lock),
               callback: (){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context)=>
+                        RangeSliderPage(dataGet: nameController.text.toString(),)));
                 print('clicked');
               },
 
