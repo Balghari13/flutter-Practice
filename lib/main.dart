@@ -1,3 +1,4 @@
+import 'package:bmi_pract/BMI%20App/bmiMainScreen.dart';
 import 'package:bmi_pract/PassingDataPrac.dart';
 import 'package:bmi_pract/RangeSlider.dart';
 import 'package:bmi_pract/widget/roundedButton.dart';
@@ -54,6 +55,17 @@ final nameController = TextEditingController();
                 callback: (){
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context)=>PassingDataPrac(nameController.text.toString())));
+                  print('clicked');
+                },
+                byColor: Colors.orange,
+              ),
+            ),
+            Container(
+              width: 100,
+              child: RoundedButton(btnName: 'BMI', icon: Icon(Icons.app_blocking_rounded),
+                callback: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>BmiMainScreen()));
                   print('clicked');
                 },
                 byColor: Colors.orange,
